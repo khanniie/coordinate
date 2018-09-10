@@ -1,4 +1,3 @@
-var canvas = null;
 var bounds = null;
 var x = null;
 var y = null;
@@ -26,16 +25,16 @@ function setupRect(cnv){
 }
 
 function getMouseX(){
-  if(canvas == null && bounds == null){
-    console.log("canvas is null right now, did you call setupBounds in setup?");
+  if(bounds == null || x == null){
+    console.log("did you call setupBounds in setup?");
     return;
   }  
   return (x - bounds.left);
 }
 
 function getMouseY(){
-  if(canvas == null && bounds == null){
-    console.log("canvas is null right now, did you call setupBounds in setup?");
+  if(bounds == null || y == null){
+    console.log("did you call setupBounds in setup?");
     return;
   }  
   return (y - bounds.top);
